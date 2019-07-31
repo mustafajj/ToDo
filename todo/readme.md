@@ -12,7 +12,11 @@ We created a resource (equivalent to controller) to perform our API Calls.
 All of our calls start with /api
 
 We created the following functions:
+
 -Get a list of all Todos
+
 -Get a Todo based on its Primary Key
+
 -Create a Todo
+
 -Delete a Todo
