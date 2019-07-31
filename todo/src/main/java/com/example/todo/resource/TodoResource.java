@@ -32,7 +32,7 @@ public class TodoResource {
         return todoRepository.findAll();
     }
 
-    @ApiOperation("Returns a specific todo based on id sent")
+    @ApiOperation("Returns a specific todo based on the id sent")
     @GetMapping("/getTodo/{id}")
     public Optional<Todo> getTodo(@PathVariable int id) {
         return todoRepository.findById(id);

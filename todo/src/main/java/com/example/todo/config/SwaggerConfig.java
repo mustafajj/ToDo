@@ -25,7 +25,7 @@ public class SwaggerConfig {
     }
 
     private ApiInfo metaInfo(){
-        ApiInfo apiInfo = new ApiInfo("Swagger for ToDo App", "A description to how the api functions work", "1.0", "TOS", "Mustafa Jaber",
+        ApiInfo apiInfo = new ApiInfo("Swagger for a ToDo App", "A description to how the api functions work", "1.0", "TOS", "Mustafa Jaber",
          "license", "licenseUrl");
          return apiInfo;
     }
