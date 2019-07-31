@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.ApiOperation;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -24,22 +26,26 @@ public class TodoResource {
         this.todoRepository = todoRepository;
     }
 
+    @ApiOperation("Returns all Todos")
     @GetMapping("/getTodos")
     public List<Todo> getAll() {
         return todoRepository.findAll();
     }
 
+    @ApiOperation("Returns a specific todo based on id sent")
     @GetMapping("/getTodo/{id}")
     public Optional<Todo> getTodo(@PathVariable int id) {
         return todoRepository.findById(id);
     }
 
+    @ApiOperation("Adds a Todo after sending Todo object having id and text")
     @PostMapping("/addTodo")
     public String saveTodo(@RequestBody Todo todo){
         todoRepository.save(todo);
         return "Added Todo with id: " + todo.getId();
     }
 
+    @ApiOperation("Deletes a specific Todo based on id sent")
     @DeleteMapping("/delete/{id}")
     public String deleteTodo(@PathVariable int id) {
         todoRepository.deleteById(id);
